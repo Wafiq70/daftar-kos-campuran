@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Kos Hunting</title>
+    <link rel="stylesheet" href="style-daftar-kos.css" />
+    <style>
+      /* Global Style */
+      body {
+        margin: 0;
+        font-family: Arial, sans-serif;
+        background-color: #121212; /* Tema gelap */
+        color: #f4f4f9;
+      }
+
+      header {
+        background-color: #272727; /* Warna gelap untuk header */
+        color: #f4f4f9;
+        padding: 1rem 2rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      header h1 {
+        margin: 0;
+      }
+
+      .kos {
+        color: #ff69b4; /* Warna pink untuk kata "Kos" */
+      }
+      .hamburger {
+        display: none; /* Sembunyikan di layar besar */
+        flex-direction: column;
+        cursor: pointer;
+      }
+
+      .hamburger div {
+        width: 30px; /* Ukuran lebih besar */
+        height: 4px; /* Garis lebih tebal */
+        background-color: white; /* Warna kontras */
+        margin: 5px 2px;
+      }
+      nav {
+        display: flex; /* Default untuk layar besar */
+        gap: 1rem;
+        align-items: center;
+      }
+
+      nav a {
+        color: #f4f4f9;
+        text-decoration: solid;
+        font-weight: bold;
+      }
+
+      nav a:hover {
+        color: #ff69b4; /* Warna pink untuk hover */
+      }
+
+      /* Untuk layar kecil (max-width: 768px) */
+      @media (max-width: 768px) {
+        .hamburger {
+          margin-left: 85%;
+          position: absolute;
+          margin-top: -5%;
+          display: grid; /* Tampilkan hamburger di layar kecil */
+          font-size: 10px;
+        }
+
+        nav {
+          display: none; /* Sembunyikan navigasi */
+          flex-direction: column;
+          gap: 0;
+          position: initial;
+          top: 10%; /* Letakkan menu di atas */
+          left: 0;
+          right: 0;
+          background-color: black; /* Latar belakang hitam */
+          padding: 1rem 0;
+          box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+          text-align: center;
+        }
+
+        nav.show {
+          display: flex; /* Tampilkan menu saat hamburger diklik */
+        }
+
+        nav a {
+          padding: 1rem 0;
+          border-bottom: 1px solid #444; /* Garis pemisah */
+        }
+
+        nav a:last-child {
+          border-bottom: none; /* Hilangkan garis terakhir */
+        }
+      }
+      /* Daftar Kos Styling */
+      .daftar-kos {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+        padding: 20px;
+        justify-content: center;
+      }
+
+      .daftar-kos-item {
+        width: 300px;
+        border: 1px solid #333;
+        border-radius: 10px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+        overflow: hidden;
+        background: #1e1e1e; /* Warna gelap untuk kartu kos */
+      }
+
+      .kos-image {
+        width: 100%;
+        height: 180px;
+        object-fit: cover;
+        cursor: pointer; /* Menunjukkan gambar bisa diklik */
+        transition: transform 0.3s ease;
+      }
+
+      .kos-image:hover {
+        transform: scale(1.05); /* Efek zoom saat hover */
+      }
+
+      .kos-info {
+        padding: 15px;
+      }
+
+      .kos-info h2 {
+        margin: 0 0 10px;
+        color: #ff69b4; /* Warna pink untuk judul kos */
+      }
+
+      .kos-info .location,
+      .kos-info .contact {
+        font-size: 14px;
+        color: #ccc;
+      }
+
+      .buttons {
+        margin-top: 15px;
+        display: flex;
+        justify-content: space-between;
+      }
+
+      .btn {
+        display: inline-block;
+        padding: 8px 12px;
+        background: #ff69b4; /* Warna pink untuk tombol */
+        color: #fff;
+        text-decoration: none;
+        border-radius: 5px;
+        font-size: 14px;
+        text-align: center;
+        transition: background 0.3s ease;
+      }
+
+      .btn:hover {
+        background: #d758a1; /* Warna pink lebih gelap untuk hover */
+      }
+
+      /* Footer */
+      footer {
+        text-align: center;
+        background-color: #1e1e1e; /* Warna gelap untuk footer */
+        color: white;
+        padding: 1rem;
+        margin-top: 1px;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Header -->
+    <header>
+      <h1><span class="kos">Kos</span> <span class="hunting">Hunting</span></h1>
+      <div class="hamburger" onclick="toggleMenu()">
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
+      <nav id="nav-menu">
+        <a href="file:///D:/huda/kuliah/tugas%20web/utama.html">Tentang Kami</a>
+        <a href="file:///D:/huda/kuliah/tugas%20web/utama.html">Promo</a>
+        <a href="file:///D:/huda/kuliah/tugas%20web/utama.html">Q&A</a>
+      </nav>
+    </header>
+
+    <!-- Daftar Kos -->
+    <section id="daftar-kos-list" class="daftar-kos">
+      <!-- Kos B -->
+      <div class="daftar-kos-item">
+        <a
+          href="https://www.instagram.com/p/DDOuFngz2Gc/?igsh=MWY2eHNnODhscnR1dg=="
+          target="_blank"
+        >
+          <img src="baru/gambar-kos-2.jpg" alt="Kos B" class="kos-image" />
+        </a>
+        <div class="kos-info">
+          <h2>Kos Campur</h2>
+          <p class="location">Krobokan, Tamanan, Banguntapan</p>
+          <p class="contact">Nomor HP admin 1: 085162631143</p>
+          fasilitas
+          <p class="fasilitas">1. Kamar ukuran-+3x4 m</p>
+          <p class="fasilitas">2. Kamar mandi dalam</p>
+          <p class="fasilitas">
+            3. Free wifi, tersedia ruang tamu, jemuran, parkiran khusus motor
+          </p>
+          <div class="buttons">
+            <a
+              href="https://maps.app.goo.gl/VdZckjVcfAVbryiMA"
+              target="_blank"
+              class="btn"
+              >Detail Lokasi</a
+            >
+            <a href="https://wa.me/6285162631143" target="_blank" class="btn"
+              >Hubungi via WA</a
+            >
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+      <p>&copy; 2024 Kos Hunting - All Rights Reserved</p>
+    </footer>
+    <script>
+      function handleSearch() {
+        const searchInput = document
+          .getElementById("search-bar")
+          .value.toLowerCase();
+        const kosList = document.getElementById("daftar-kos-list");
+        const kosItems = kosList.getElementsByClassName("daftar-kos-item");
+
+        for (let i = 0; i < kosItems.length; i++) {
+          const kosItem = kosItems[i];
+          const name = kosItem.querySelector("h2").textContent.toLowerCase();
+          const location = kosItem
+            .querySelector(".location")
+            .textContent.toLowerCase();
+
+          if (name.includes(searchInput) || location.includes(searchInput)) {
+            kosItem.style.display = "";
+          } else {
+            kosItem.style.display = "none";
+          }
+        }
+      }
+
+      function toggleMenu() {
+        const navMenu = document.getElementById("nav-menu");
+        navMenu.style.display =
+          navMenu.style.display === "flex" ? "none" : "flex";
+        navMenu.classList.toggle("show");
+      }
+    </script>
+  </body>
+</html>
