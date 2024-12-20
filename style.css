@@ -7,7 +7,7 @@
       }
 
       header {
-        background-color: #272727; /* Warna gelap untuk header */
+        background: linear-gradient(to right, #200819 20%, #d4006c 80%); /* Warna gelap untuk header */
         color: #f4f4f9;
         padding: 1rem 2rem;
         display: flex;
@@ -20,8 +20,15 @@
       }
 
       .kos {
-        color: #ff69b4; /* Warna pink untuk kata "Kos" */
+        color: #d4006c;
+        text-shadow: 2px 2px 2px rgb(240, 235, 235);
       }
+
+      .hunting {
+        color: rgb(250, 249, 249);
+        text-shadow: 2px 2px 2px rgb(206, 17, 112);
+      }
+
       .hamburger {
         display: none; /* Sembunyikan di layar besar */
         flex-direction: column;
@@ -64,7 +71,7 @@
           display: none; /* Sembunyikan navigasi */
           flex-direction: column;
           gap: 0;
-          position: initial;
+          position: absolute;
           top: 10%; /* Letakkan menu di atas */
           left: 0;
           right: 0;
